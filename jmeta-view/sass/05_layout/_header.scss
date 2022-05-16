@@ -1,0 +1,64 @@
+// 헤더 시작 ------------------------------------------------------------------------ /
+.header {
+    @include position(fixed, 0, null, 0, 0);
+    background-color: $white;
+    z-index: 10;
+    @include line-bottom(1px, $line);
+
+    .inner {
+        padding: 0 16px;
+        height: 56px;
+        line-height: 56px;
+    }
+    &__title {
+        text-align: center;
+
+        h1.title-text {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+    .logo {
+        img {
+            padding-bottom: 6px;
+        }
+    }
+    .logo,
+    .title-text {
+        display: inline-block;
+    }
+    &--left {
+        @include psTop($ps:absolute, $top:50%, $transY:-50%);
+
+        .drow-btn {
+            background-position: 97.238% 39.792%;
+        }
+
+        .return-btn {
+            @include bgIcon(back-24, 24px, auto);
+        }
+
+    }
+
+    &--right {
+        position: absolute;
+        top: 50%;
+        right: 16px;
+        transform: translateY(-50%);
+    }
+
+    .return-btn,
+    .search-btn {
+        display: block;
+        width: 24px;
+        height: 24px;
+        text-indent: -9999px;
+    }
+}
+
+.logo {
+    width: 122px;
+    height: auto;
+}
+
+// 헤더 종료 --------------------------------------------------------------------- /

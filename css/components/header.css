@@ -1,0 +1,28 @@
+/* HEADER */
+
+.header {
+    height: 56px;
+    line-height: 56px;
+}
+.header__title {
+    text-align: center;
+}
+.logo {
+    width: 122px;
+    height: auto;
+}
+
+.logo,
+.title-text {
+    display: inline-block;
+}
+
+.header--left {}
+.header--left {}
+.header--right {}
+
+.header__title {}
+.header__title h2.title-text {
+    font-size: 16px;
+    font-weight: bold;
+}

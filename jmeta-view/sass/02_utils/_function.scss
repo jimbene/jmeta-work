@@ -1,0 +1,5 @@
+$max-width: 100%;
+
+@function tabWidth($number: 1, $width: 12) {
+    @return $max-width * ($number / $width)
+  }

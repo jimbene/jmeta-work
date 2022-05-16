@@ -1,0 +1,183 @@
+// 버튼 ----------------------------------------------------------------- /
+.btn {
+    height: 48px;
+    color: $primary;
+    border: 1px solid $primary;
+    @include border-radius(4px);
+
+}
+.pr-btn {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    color: $white;
+    text-align: center;
+    background-color: $primary;
+    @include border-radius(4px);
+}
+.pr-light-btn {
+    padding: 0 10px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    font-weight: bold;
+    color: $primary;
+    background-color: $primary-light;
+    @include border-radius(3rem);
+}
+.pr-btn--bottom {
+    position: fixed!important;
+    bottom: 0;
+    @extend .pr-btn;
+    font-size: 16px;
+    font-weight: bold;
+    @include border-radius(0);
+}
+.pr-btn--icon {
+    position: relative;
+
+    &::after {
+        content: '';
+        @include psTop(absolute, 50%, -50%);
+        right: 16px;
+        @extend .icon-size;
+        @include bgIcon(next_w-24, 24px, auto);
+    }
+}
+.ir-btn {
+    background-color: transparent;
+    border: 0;
+    text-indent: -9999px;
+}
+
+.more-btn {
+    position: relative;
+    font-size: $xs;
+    color: $gray400;
+
+    &::after {
+        content: '';
+        display: inline-block;
+        @extend .icon-size-16;
+        @include bgIcon(next_gray, 16px, auto);
+        vertical-align: top;
+    }
+}
+
+.close-btn {
+    text-indent: -9999px;
+    background-position: -74px -74px;
+}
+
+// 체크박스 ----------------------------------------------------------------- /
+#likeBtn {
+    display: none;
+    & + label {
+        display: block;
+        
+        .check__btn--like {
+            display: block;
+            width: 24px;
+            height: 24px;
+            @include bgIcon(like-24, 24px, auto);
+        }
+    }
+    &:checked + label {
+
+        .check__btn--like {
+            background-image: url(../../images/icon/like_on-24.png);
+        }
+    }
+}
+
+
+
+// 탭 ----------------------------------------------------------------- /
+.menu-tab {
+    @include flexbox(row, center, center, nowrap);
+    border-bottom: 1px solid $gray200;
+
+    li {
+        width: 33.333%;
+        height: 48px;
+        line-height: 48px;
+        
+        a {
+            position: relative;
+            display: block;
+            font-size: 14px;
+            font-weight: 400;
+            color: $gray500;
+            text-align: center;
+
+            &.active {
+                font-weight: bold;
+                color: $primary;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: -1px;
+                    width: 100%;
+                    height: 4px;
+                    background-color: $primary;
+                }
+            }
+        }
+    }
+}
+.tabs {
+    display: none;
+}
+
+// 하단네비탭 ----------------------------------------------------------------- /
+.nav-tab {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-shadow: 0 -2px 2px rgba(0,0,0,.06);
+    background-color: $white;
+
+    ul {
+        display: flex;
+        align-items: center;
+        height: 56px;
+
+        .nav-tab__li {
+            width: 25%;
+
+            a {
+                display: block;
+                text-align: center;
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                }  
+                
+                .nav-tab__text {
+                    display: block;
+                    color: $gray400;
+                    font-weight: 400;
+                    font-size: $xs;
+                }
+
+                &.active {
+                    
+                    .nav-tab__text {
+                        display: block;
+                        color: $primary;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
